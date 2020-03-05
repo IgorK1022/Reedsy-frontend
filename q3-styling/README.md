@@ -1,4 +1,4 @@
-# reedsy
+# Q3 - Styling
 
 ## Project setup
 ```
