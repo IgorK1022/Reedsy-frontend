@@ -28,41 +28,46 @@
       ></v-pagination>
       
       <v-container>
-        <v-row dense>
-        <v-col
-          v-for="(book, index) in books"
-          :key="index"
-          cols="12"
-        >
-          <v-card
-            class="mx-auto"
-            outlined
+        <v-row dense v-if="books.length > 0">
+          <v-col
+            v-for="(book, index) in books"
+            :key="index"
+            cols="12"
           >
-            <v-list-item three-line>
-              <v-list-item-content class="book-info">
-                <v-list-item-title class="headline mb-1"><a class="title" :href="'/detail/' + book.slug">{{ ((pagination.page - 1) * 5 + index + 1) + '. ' + book.title }}</a>
-                  <span class="rating">{{ '(' + book.rating + '/10)' }}</span>
-                </v-list-item-title>
-                <div class="overline mb-4"><i>{{ book.author }}</i></div>
-                <div><p>{{ book.synopsis }}</p></div>
-                <v-card-actions>
-                  <v-btn class="upvoted" small color="warning" :outlined="book.upvoted">Upvote</v-btn>
-                  <div class="upvoted-times">Upvoted {{ book.upvotes }} times</div>
-                </v-card-actions>
-              </v-list-item-content>
-        
-              <a :href="'/detail/' + book.slug">
-                <v-avatar
-                  class="ma-4 cover"
-                  width="100"
-                  height="150"
-                  tile
-                >
-                  <v-img :src="book.cover"></v-img>
-              </v-avatar></a>
-            </v-list-item>
-          </v-card>
-        </v-col>
+            <v-card
+              class="mx-auto"
+              outlined
+            >
+              <v-list-item three-line>
+                <v-list-item-content class="book-info">
+                  <v-list-item-title class="headline mb-1"><a class="title" :href="'/detail/' + book.slug">{{ ((pagination.page - 1) * 5 + index + 1) + '. ' + book.title }}</a>
+                    <span class="rating">{{ '(' + book.rating + '/10)' }}</span>
+                  </v-list-item-title>
+                  <div class="overline mb-4"><i>{{ book.author }}</i></div>
+                  <div><p>{{ book.synopsis }}</p></div>
+                  <v-card-actions>
+                    <v-btn class="upvoted" small color="warning" :outlined="book.upvoted">Upvote</v-btn>
+                    <div class="upvoted-times">Upvoted {{ book.upvotes }} times</div>
+                  </v-card-actions>
+                </v-list-item-content>
+          
+                <a :href="'/detail/' + book.slug">
+                  <v-avatar
+                    class="ma-4 cover"
+                    width="100"
+                    height="150"
+                    tile
+                  >
+                    <v-img :src="book.cover"></v-img>
+                </v-avatar></a>
+              </v-list-item>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row class="no-data" dense v-else>
+          <div class="container">
+            <h2>No data or server error</h2>
+          </div>
         </v-row>
       </v-container>
     </v-card>
@@ -161,4 +166,6 @@ export default {
       border-radius: 5px
     .search-text
       padding: 0 30px
+    .no-data
+      text-align: center
 </style>

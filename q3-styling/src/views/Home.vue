@@ -11,7 +11,8 @@
             class="recommended"
             color="#ffcc00"
             content="Recommended"
-            style="margin-right: 100px;">
+            overlap
+            offset-x="90">
               <v-img
                 class="white--text align-end featured-book"
                 style="float: left; margin-right: 20px; border-radius: 15px;"
@@ -72,10 +73,11 @@
 
       <v-container class="grey lighten-5 books-list">
         <v-row no-gutters>
-          <v-col class="book" cols="12" sm="4">
+          <v-col class="book" cols="12" sm="6" md="4">
             <v-badge
               color="#ffcc00"
-              content="1">
+              content="1"
+              overlap>
               <v-img
                 class="white--text align-end"
                 src="../assets/images/02-where.jpg">
@@ -105,10 +107,11 @@
 
           </v-col>
 
-          <v-col class="book" cols="12" sm="4">
+          <v-col class="book" cols="12" sm="6" md="4">
             <v-badge
                 color="#ffcc00"
-                content="2">
+                content="2"
+                overlap>
                 <v-img
                   class="white--text align-end"
                   src="../assets/images/03-girl.jpg">
@@ -138,10 +141,11 @@
             </v-badge>
           </v-col>
 
-          <v-col class="book" cols="12" sm="4">
+          <v-col class="book" cols="12" sm="6" md="4">
             <v-badge
                 color="#ffcc00"
-                content="3">
+                content="3"
+                overlap>
 
               <v-img
                 class="white--text align-end"
@@ -202,6 +206,8 @@ export default {
     padding-bottom: 0
   .author
     padding-top: 0px
+  .synopsis
+    padding-right: 40px
   .top-voted
     margin-bottom: 60px
 </style>

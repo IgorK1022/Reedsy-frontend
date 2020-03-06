@@ -4,14 +4,14 @@
       app
       color="#FFFFFF"
     >
-      <a class="top-logo v-btn" href="#">Logo</a>
+      <a class="top-logo v-btn col-xs-1" href="#">Logo</a>
 
       <v-spacer></v-spacer>
 
-      <v-btn text depressed color="normal">Home</v-btn>
-      <v-btn text depressed color="normal">Just added</v-btn>
-      <v-btn text class="top-books" color="white">Top books</v-btn>
-      <v-btn text depressed color="normal">Upcoming</v-btn>
+      <v-btn text depressed color="normal" xs="1">Home</v-btn>
+      <v-btn text depressed color="normal" xs="1">Just added</v-btn>
+      <v-btn text class="top-books" color="white" xs="1">Top books</v-btn>
+      <v-btn text depressed color="normal" xs="1">Upcoming</v-btn>
     </v-app-bar>
 
     <v-content>
@@ -66,6 +66,9 @@ export default Vue.extend({
 </script>
 
 <style lang="sass">
+  @media (max-width: 800px)
+    .top-logo
+      width: 20px
   .v-btn
     text-transform: initial !important
   .top-logo
