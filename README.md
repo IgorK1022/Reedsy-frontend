@@ -113,5 +113,5 @@ npm run serve
 Q4
 
 ```bash
-npm start
+npm run serve
 ```
