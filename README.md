@@ -112,6 +112,13 @@ npm run serve
 
 Q4
 
+At first, run the q4-server
+
 ```bash
-npm start
+npm run server
+```
+after that
+
+```bash
+npm run serve
 ```
